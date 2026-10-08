@@ -1,0 +1,64 @@
+<%- include('partials/header', { title: 'Главная' }) %>
+
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="bg-primary text-white d-flex flex-column justify-content-center align-items-center" style="height: 350px;">
+        <h2>Лазерные принтеры</h2>
+        <p>Быстрая и экономичная печать</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="bg-success text-white d-flex flex-column justify-content-center align-items-center" style="height: 350px;">
+        <h2>Струйные принтеры</h2>
+        <p>Яркие цвета и фотопечать</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="bg-secondary text-white d-flex flex-column justify-content-center align-items-center" style="height: 350px;">
+        <h2>Термопринтеры</h2>
+        <p>Чеки и этикетки без чернил</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- девиз сайта -->
+<div class="bg-body-tertiary rounded text-center py-5 my-4">
+  <h1>Всё для качественной печати</h1>
+</div>
+
+<!-- блоки текста -->
+<div class="row g-3">
+  <div class="col-md-6">
+    <div class="bg-body-tertiary rounded p-4 h-100">
+      <h4>О магазине</h4>
+      <p>Мы продаём лазерные, струйные и термопринтеры. Только проверенные модели и только те, что есть в наличии.</p>
+    </div>
+  </div>
+  <div class="col-md-6 d-flex flex-column gap-3">
+    <div class="bg-body-tertiary rounded p-4 flex-fill">
+      <h4>Выгодные цены</h4>
+      <p class="mb-0">Следим за ценами, чтобы вы покупали технику без переплат.</p>
+    </div>
+    <div class="bg-body-tertiary rounded p-4 flex-fill">
+      <h4>Быстрый заказ</h4>
+      <p class="mb-0">Выберите принтер в каталоге и оформите заказ за пару минут.</p>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

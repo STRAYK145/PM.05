@@ -1,0 +1,14 @@
+{
+  "name": "printer-shop",
+  "version": "1.0.0",
+  "description": "Интернет-магазин принтеров",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  }
+}
