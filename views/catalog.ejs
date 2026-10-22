@@ -1,5 +1,61 @@
 <%- include('partials/header', { title: 'Каталог' }) %>
 
-<h1>Каталог</h1>
+<div class="container py-4">
+    <h1 class="h3 mb-4">Каталог</h1>
+
+    <!-- Сортировка и фильтр -->
+    <form method="GET" action="/catalog" class="row g-3 align-items-end mb-4">
+        <div class="col-12 col-md-4">
+            <label for="category" class="form-label">Категория</label>
+            <select class="form-select" id="category" name="category" onchange="this.form.submit()">
+                <option value="">Все категории</option>
+                <% categories.forEach(function (c) { %>
+                    <option value="<%= c.id %>" <%= selectedCategory === c.id ? 'selected' : '' %>>
+                        <%= c.name %>
+                    </option>
+                <% }) %>
+            </select>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <label for="sort" class="form-label">Сортировка</label>
+            <select class="form-select" id="sort" name="sort" onchange="this.form.submit()">
+                <option value="" <%= selectedSort === '' ? 'selected' : '' %>>По новизне</option>
+                <option value="year" <%= selectedSort === 'year' ? 'selected' : '' %>>По году производства</option>
+                <option value="name" <%= selectedSort === 'name' ? 'selected' : '' %>>По наименованию</option>
+                <option value="price" <%= selectedSort === 'price' ? 'selected' : '' %>>По цене</option>
+            </select>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <a href="/catalog" class="btn btn-outline-secondary">Сбросить</a>
+        </div>
+    </form>
+
+    <!-- Карточки товаров -->
+    <% if (products.length === 0) { %>
+        <div class="alert alert-info">Товары не найдены</div>
+    <% } else { %>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
+            <% products.forEach(function (p) { %>
+                <div class="col">
+                    <a href="/product/<%= p.id %>" class="text-decoration-none text-reset">
+                        <div class="card h-100 shadow-sm">
+                            <img src="/images/<%= p.image %>" class="card-img-top"
+                                 alt="<%= p.name %>"
+                                 style="height: 200px; object-fit: contain; padding: 12px;">
+                            <div class="card-body">
+                                <h2 class="h6 card-title"><%= p.name %></h2>
+                                <p class="card-text fw-bold mb-0">
+                                    <%= Number(p.price).toLocaleString('ru-RU') %> ₽
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+</div>
 
 <%- include('partials/footer') %>

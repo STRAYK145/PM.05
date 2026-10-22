@@ -12,6 +12,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // название сайта доступно во всех шаблонах
 app.locals.siteName = 'ПринтерМаркет';
 
+app.use('/', require('./routes/catalog'));
+app.use('/', require('./routes/product'));
+
 app.get('/', (req, res) => {
   res.render('index', );
 });

@@ -4,14 +4,19 @@
   "description": "Интернет-магазин принтеров",
   "main": "app.js",
   "scripts": {
+    "migrate": "knex --knexfile config/knexfile.js migrate:latest",
+    "migrate:make": "knex --knexfile config/knexfile.js migrate:make",
+    "rollback": "knex --knexfile config/knexfile.js migrate:rollback",
+    "seed": "knex --knexfile config/knexfile.js seed:run",
     "start": "node app.js",
     "dev": "nodemon app.js"
-
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
+    "knex": "^3.3.0",
+    "multer": "^2.4.0",
     "nodemon": "^3.1.14",
     "pg": "^8.13.1"
   }
