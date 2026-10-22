@@ -13,15 +13,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.locals.siteName = 'ПринтерМаркет';
 
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Главная' });
+  res.render('index', );
 });
 
 app.get('/catalog', (req, res) => {
-  res.render('catalog', { title: 'Каталог' });
+  res.render('catalog');
 });
 
 app.get('/contacts', (req, res) => {
-  res.render('contacts', { title: 'Контакты' });
+  res.render('contacts');
+});
+
+app.get('/registrations', (req, res) => {
+  res.render('registrations');
+});
+
+app.get('/autorizations', (req, res) => {
+  res.render('autorizations');
 });
 
 app.listen(PORT, () => {

@@ -1,0 +1,80 @@
+<%- include('partials/header', { title: 'Регистрация' }) %>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h1 class="h3 text-center mb-4">Регистрация</h1>
+
+                    <form action="/register" method="POST" class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="surname" class="form-label">Фамилия</label>
+                                <input type="text" class="form-control" id="surname" name="surname"
+                                       pattern="[А-Яа-яЁё \-]+" required>
+                                <div class="invalid-feedback">Обязательное поле. Только кириллица, пробел и тире</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Имя</label>
+                                <input type="text" class="form-control" id="name" name="name"
+                                       pattern="[А-Яа-яЁё \-]+" required>
+                                <div class="invalid-feedback">Обязательное поле. Только кириллица, пробел и тире</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="patronymic" class="form-label">Отчество <span class="text-muted">(необязательно)</span></label>
+                            <input type="text" class="form-control" id="patronymic" name="patronymic"
+                                   pattern="[А-Яа-яЁё \-]+">
+                            <div class="invalid-feedback">Только кириллица, пробел и тире</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="login" class="form-label">Логин</label>
+                            <input type="text" class="form-control" id="login" name="login"
+                                   pattern="[A-Za-z0-9\-]+" autocomplete="username" required>
+                            <div class="invalid-feedback">Обязательное поле. Только латиница, цифры и тире</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Электронная почта</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                   autocomplete="email" required>
+                            <div class="invalid-feedback">Введите корректный email</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="password" name="password"
+                                   minlength="6" autocomplete="new-password" required>
+                            <div class="invalid-feedback">Пароль должен быть не менее 6 символов</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password_repeat" class="form-label">Повторите пароль</label>
+                            <input type="password" class="form-control" id="password_repeat" name="password_repeat"
+                                   autocomplete="new-password" required>
+                            <div class="invalid-feedback">Пароли должны совпадать</div>
+                        </div>
+
+                        <div class="mb-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="rules" name="rules" required>
+                            <label class="form-check-label" for="rules">Я согласен с правилами регистрации</label>
+                            <div class="invalid-feedback">Необходимо согласиться с правилами регистрации</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
+                    </form>
+
+                    <p class="text-center text-muted mt-3 mb-0">
+                        Уже есть аккаунт? <a href="/autorizations">Войти</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/validation.js"></script>
+<%- include('partials/footer') %>

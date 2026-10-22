@@ -4,11 +4,15 @@
   "description": "Интернет-магазин принтеров",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+
   },
   "dependencies": {
+    "bootstrap": "^5.3.8",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
+    "nodemon": "^3.1.14",
     "pg": "^8.13.1"
   }
 }
